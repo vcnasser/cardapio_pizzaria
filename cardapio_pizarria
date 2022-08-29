@@ -1,0 +1,340 @@
+def linha():
+    print('*' * 45)
+
+
+from time import sleep
+
+# Preços dos Produtos
+preco_mussarella_P = 18
+preco_calabresa_P = 19
+preco_portuguesa_P = 20
+
+preco_mussarella_M = 25
+preco_calabresa_M = 27
+preco_portuguesa_M = 29
+
+preco_mussarella_G = 40
+preco_calabresa_G = 42
+preco_portuguesa_G = 45
+
+preco_refrigerante = 8
+
+
+sleep(3)
+# Menu Inicial - Cardápio
+print('PIZARRIA - CARDÁPIO')
+linha()
+print('''Boa noite!
+PRa começar, escolha o tamanho de sua pizza:
+[1] Pizza P
+[2] Pizza M
+[3] Pizza G''')
+
+
+# Escolher Tamanho da pizza
+while True:
+
+    escolha_tamanho = int(input('Qual Tamanho deseja? '))
+    linha()
+    if escolha_tamanho == 1:
+
+        # Quantidade de pizzas
+        qtdP = int(input('Insira a quantidade de pizzas P que deseja: '))
+        if qtdP == 1:
+            sabor_P = int(input('''
+[1] Mussarella - R$18,00
+[2] Calabresa - R$19,00
+[3] Portuguesa R$20,00'
+Qual será o sabor da sua pizza? '''))
+
+# Situação de pedida de apenas uma unidade
+            if sabor_P == 1:
+                linha()
+                print('Pizza P de Mussarella adicionada ao carrinho')
+                pagamento = preco_mussarella_P
+                break
+            if sabor_P == 2:
+                linha()
+                print('Pizza P de Calabresa adicionada ao carrinho')
+                pagamento = preco_calabresa_P
+                break
+            if sabor_P == 3:
+                linha()
+                print('Pizza P de Portuguesa adicionada ao carrinho')
+                pagamento = preco_portuguesa_P
+                break
+
+# Pedido com quantidade igual a 2
+        if qtdP == 2:
+            sabor_P = int(input('''Sabor 1:
+[1] Mussarella - R$18,00
+[2] Calabresa - R$19,00
+[3] Portuguesa R$20,00'
+Qual será um dos sabores da sua pizza? '''))
+
+            sabor_P2 = int(input('''Sabor 2:
+[1] Mussarella - R$18,00
+[2] Calabresa - R$19,00
+[3] Portuguesa R$20,00'
+Qual será o sabor de sua outra pizza? '''))
+
+            if sabor_P == 1 and sabor_P2 == 1:
+                linha()
+                print(' Duas Pizza P de Mussarella adicionadas ao carrinho')
+                pagamento = preco_mussarella_P * 2
+                break
+            if sabor_P == 2 and sabor_P2 == 1:
+                linha()
+                print('Pizza P de Calabresa e Pizza P de Mussarella adicionadas ao carrinho')
+                pagamento = preco_calabresa_P + preco_mussarella_P
+                break
+            if sabor_P == 3 and sabor_P2 == 1:
+                linha()
+                print('Pizza P de Portuguesa e Pizza P de mussarella adicionadas ao carrinho')
+                pagamento = preco_portuguesa_P + preco_mussarella_P
+                break
+
+            if sabor_P == 1 and sabor_P2 == 2:
+                linha()
+                print('Uma Pizza P de Mussarella e Pizza P de calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_mussarella_P + preco_calabresa_P
+                break
+            if sabor_P == 2 and sabor_P2 == 2:
+                linha()
+                print('Duas pizzas P de Calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_calabresa_P * 2
+                break
+            if sabor_P == 3 and sabor_P2 == 2:
+                linha()
+                print('Uma Pizza P de Portuguesa e Pizza P de Calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_P + preco_calabresa_P
+                break
+
+            if sabor_P == 1 and sabor_P2 == 3:
+                linha()
+                print('Uma Pizza P de Mussarella e Pizza P de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_mussarella_P + preco_portuguesa_P
+                break
+            if sabor_P == 2 and sabor_P2 == 3:
+                linha()
+                print('Uma Pizza P de Calabresa e Pizza P de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_P + preco_calabresa_P
+                break
+            if sabor_P == 3 and sabor_P2 == 3:
+                linha()
+                print('Duas pizzas P de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_P * 2
+                break
+
+    # Opções para tamanho M
+
+    if escolha_tamanho == 2:
+        # Quantidade de pizzas
+        qtdM = int(input('Insira a quantidade de pizzas M que deseja: '))
+        # Opções geradas para pedido único
+        if qtdM == 1:
+            sabor_M = int(input('''
+[1] Mussarella - R$25,00
+[2] Calabresa - R$27,00
+[3] Portuguesa R$29,00'
+Qual será o sabor da sua pizza? '''))
+
+                # Situação de pedida de apenas uma unidade
+            if sabor_M == 1:
+                linha()
+                print('Pizza M de Mussarella adicionada ao carrinho')
+                pagamento = preco_mussarella_M
+                break
+            if sabor_M == 2:
+                linha()
+                print('Pizza M de Calabresa adicionada ao carrinho')
+                pagamento = preco_calabresa_M
+                break
+            if sabor_M == 3:
+                linha()
+                print('Pizza M de Portuguesa adicionada ao carrinho')
+                pagamento = preco_portuguesa_M
+                break
+
+            # Pedido com quantidade igual a 2
+        if qtdM == 2:
+            sabor_M = int(input('''
+[1] Mussarella - R$25,00
+[2] Calabresa - R$27,00
+[3] Portuguesa R$29,00'
+Qual será um dos sabores da sua pizza? '''))
+
+            sabor_M2 = int(input('''
+[1] Mussarella - R$25,00
+[2] Calabresa - R$27,00
+[3] Portuguesa R$29,00'
+Qual será o sabor de sua outra pizza? '''))
+
+            if sabor_M == 1 and sabor_M2 == 1:
+                linha()
+                print(' Duas Pizza m de Mussarella adicionadas ao carrinho')
+                pagamento = preco_mussarella_P * 2
+                break
+            if sabor_M == 2 and sabor_M2 == 1:
+                linha()
+                print('Pizza M de Calabresa e Pizza M de Mussarella adicionadas ao carrinho')
+                pagamento = preco_calabresa_P + preco_mussarella_P
+                break
+            if sabor_M == 3 and sabor_M2 == 1:
+                linha()
+                print('Pizza M de Portuguesa e Pizza M de mussarella adicionadas ao carrinho')
+                pagamento = preco_portuguesa_M + preco_mussarella_M
+                break
+
+            if sabor_M == 1 and sabor_M2 == 2:
+                linha()
+                print('Uma Pizza M de Mussarella e Pizza m de calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_mussarella_M + preco_calabresa_M
+                break
+            if sabor_M == 2 and sabor_M2 == 2:
+                linha()
+                print('Duas pizzas M de Calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_calabresa_M * 2
+                break
+            if sabor_M == 3 and sabor_M2 == 2:
+                linha()
+                print('Uma Pizza M de Portuguesa e Pizza M de Calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_M + preco_calabresa_M
+                break
+
+            if sabor_M == 1 and sabor_M2 == 3:
+                linha()
+                print('Uma Pizza M de Mussarella e Pizza M de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_mussarella_M + preco_portuguesa_M
+                break
+            if sabor_M == 2 and sabor_M2 == 3:
+                linha()
+                print('Uma Pizza M de Calabresa e Pizza M de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_M + preco_calabresa_M
+                break
+            if sabor_M == 3 and sabor_M2 == 3:
+                linha()
+                print('Duas pizzas M de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_M * 2
+                break
+
+# Opções para Pizza G
+
+    if escolha_tamanho == 3:
+        # Quantidade de pizzas
+        qtdG = int(input('Insira a quantidade de pizzas G que deseja: '))
+        # Opções geradas para pedido único
+        if qtdG == 1:
+            sabor_G = int(input('''
+[1] Mussarella - R$40,00
+[2] Calabresa - R$42,00
+[3] Portuguesa R$45,00'
+Qual será o sabor da sua pizza? '''))
+
+                # Situação de pedida de apenas uma unidade
+            if sabor_G == 1:
+                linha()
+                print('Pizza G de Mussarella adicionada ao carrinho')
+                pagamento = preco_mussarella_G
+                break
+            if sabor_G == 2:
+                linha()
+                print('Pizza G de Calabresa adicionada ao carrinho')
+                pagamento = preco_calabresa_G
+                break
+            if sabor_G == 3:
+                linha()
+                print('Pizza G de Portuguesa adicionada ao carrinho')
+                pagamento = preco_portuguesa_G
+                break
+
+            # Pedido com quantidade igual a 2
+        if qtdG == 2:
+            sabor_G = int(input('''
+[1] Mussarella - R$40,00
+[2] Calabresa - R$42,00
+[3] Portuguesa R$45,00'
+Qual será um dos sabores da sua pizza? '''))
+
+            sabor_G2 = int(input('''
+[1] Mussarella - R$40,00
+[2] Calabresa - R$42,00
+[3] Portuguesa R$45,00'
+Qual será o sabor de sua outra pizza? '''))
+
+            if sabor_G == 1 and sabor_G2 == 1:
+                linha()
+                print(' Duas Pizza G de Mussarella adicionadas ao carrinho')
+                pagamento = preco_mussarella_G * 2
+                break
+            if sabor_G == 2 and sabor_G2 == 1:
+                linha()
+                print('Pizza G de Calabresa e Pizza G de Mussarella adicionadas ao carrinho')
+                pagamento = preco_calabresa_G + preco_mussarella_G
+                break
+            if sabor_G == 3 and sabor_G2 == 1:
+                linha()
+                print('Pizza G de Portuguesa e Pizza G de mussarella adicionadas ao carrinho')
+                pagamento = preco_portuguesa_G + preco_mussarella_G
+                break
+
+            if sabor_G == 1 and sabor_G2 == 2:
+                linha()
+                print('Uma Pizza G de Mussarella e Pizza G de calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_mussarella_G + preco_calabresa_G
+                break
+            if sabor_G == 2 and sabor_G2 == 2:
+                linha()
+                print('Duas pizzas G de Calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_calabresa_G * 2
+                break
+            if sabor_G == 3 and sabor_G2 == 2:
+                linha()
+                print('Uma Pizza G de Portuguesa e Pizza G de Calabresa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_G + preco_calabresa_G
+                break
+
+            if sabor_G == 1 and sabor_G2 == 3:
+                linha()
+                print('Uma Pizza G de Mussarella e Pizza G de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_mussarella_G + preco_portuguesa_G
+                break
+            if sabor_G == 2 and sabor_G2 == 3:
+                linha()
+                print('Uma Pizza G de Calabresa e Pizza G de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_G + preco_calabresa_G
+                break
+            if sabor_G == 3 and sabor_G2 == 3:
+                linha()
+                print('Duas pizzas G de Portuguesa adicionadas ao seu carrinho ')
+                pagamento = preco_portuguesa_G * 2
+                break
+
+linha()
+opcao_refrigerante = input('Deseja adicionar refrigerante em seu carrinho (R$8,00 cada unidade)? [S/N]')
+
+if opcao_refrigerante in 'Ss':
+    qtd_refri = int(input('Insira a quantidade de copos desejada: '))
+
+else:
+    print('Não adicionar Bebida')
+
+linha()
+conta_final = pagamento + preco_refrigerante * qtd_refri
+print('Finalizando pedido... ')
+sleep(3)
+linha()
+print(f'Ao todo , sua conta deu R${conta_final},00 , se dirija ao caixa para a realização do pagamento. Tenha um Bom Apetite e um bom resto de dia!')
+
+
+
+
+
+
+
+
+
+
+
+
+
